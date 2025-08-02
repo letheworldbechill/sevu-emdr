@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMDR Tool</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Stage -->
+    <div id="stage">
+        <div id="dot"></div>
+    </div>
+
+    <!-- Countdown -->
+    <div id="timer" aria-live="polite"></div>
+
+    <!-- Controls -->
+    <button id="startStop" class="control-btn">Start</button>
+    <button id="menuBtn" class="menu-btn">&#9776;</button>
+
+    <!-- Settings Menu -->
+    <div id="menu" class="hidden" aria-hidden="true">
+        <h2>Einstellungen</h2>
+
+        <label for="speedRange">BPM: <span id="speedLabel">60</span></label>
+        <input type="range" id="speedRange" min="30" max="240" value="60">
+
+        <label for="durationSelect" style="margin-top:12px;">Dauer&nbsp;(Sek):</label>
+        <select id="durationSelect">
+            <option value="30">30</option>
+            <option value="45" selected>45</option>
+            <option value="60">60</option>
+        </select>
+    </div>
+
+    <!-- Heartbeat Audio -->
+    <audio id="heartbeat" src="safe_heartbeat.wav" preload="auto"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
